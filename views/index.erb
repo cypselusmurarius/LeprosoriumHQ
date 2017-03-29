@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Latest posts:</h2>
+    <br />
+
+    <% @results.each do |post| %>
+        <p>
+            <%= post['content'] %>
+            <br />
+            <br />
+            Username: <%= post['username'] %>
+            <br />
+            <br />
+            Added at: <%= post['created_date'] %>
+            <br />
+            <br />
+            <a href="/details/<%= post['id'] %>">Comments</a>
+        </p>
+        <hr />
+    <% end %>
+</body>
+</html>

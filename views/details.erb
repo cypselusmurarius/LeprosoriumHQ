@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Post details:</h4>
+    <p>
+        <%= @row['content'] %>
+        <br />
+        <br />
+        Added at: <%= @row['created_date'] %>
+    </p>
+    <br />
+    <h4>Comments:</h4>
+    <br />
+    <% @comments.each do |comment| %>
+        <p>
+            <%= comment['content'] %>
+            <br />
+            <br />
+            <span style="font-size: 75%; color: #999">Added at: <%= comment['created_date'] %></span>
+        </p>
+        <hr />
+    <% end %>
+
+    <form action="/details/<%= @row['id'] %>" method="POST">
+        <textarea name="content" class="form-control" rows="6" placeholder="Type comment text here"></textarea>
+        <br />
+        <button type="submit" class="btn btn-primary">Add comment</button>
+    </form>
+    
+</body>
+</html>
