@@ -10,16 +10,16 @@
     <h2>Add New Post</h2>
     <form action="/new" method="POST">
 
-        <textarea name="content" class="form-control" rows="6" placeholder="Type post text here"></textarea>
+        <textarea name="post[:message]" class="form-control" rows="6" placeholder="Type post text here" value="<%= @p.message %>"></textarea>
         <br />
 
         <div class="form-group">
             <h2>Input username</h2>
-            <input name="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="username">
+            <input name="post[:name]" type="text" class="form-control" id="exampleInputEmail1" placeholder="input your name here" value="<%= @p.username %>">
         </div>
 
         <br />
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
 </body>
 </html>
